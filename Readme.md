@@ -1,8 +1,25 @@
 
-# imMobilize 🥲 
-## This is a fork from [this](https://github.com/ChatzigeorgiouGroup/imMobilize)
+# imMobilize - Bachelor Thesis BO22EB-O4 
+### This is a clone of [imMobilize](https://github.com/ChatzigeorgiouGroup/imMobilize)
 
-imMobilize consists of open software and hardware designed to collect video data of small free swimming animals, and administer various stimuli in an accurate and automated manner. This system was developed for experiments with the tunicate _Ciona intestinalis_
+This is documntation for the Bachelor Thesis: Data Collection System for Behavior and Activity of Marine Organisms.
+It is written by Dennis L. Dimmen, Andreas K. Seljeset and Håvard F. Johnsen for Chatzigeorgiou Group at Sars Center, UiB.
+
+The original documentation is collected from [imMobilize](https://github.com/ChatzigeorgiouGroup/imMobilize) and is written by Daniel Dondorp. The new documentation is heavily based on the original, all creds to Daniel and Chatzigeorgiou Group.
+
+
+
+
+
+
+imMobilize consists of software and hardware designed to collect video data of small free swimming animals, and administer various stimuli in an accurate and automated manner. This system was developed for experiments with the tunicate _Ciona intestinalis_
+
+
+
+
+
+
+
 
 ### Hardware
 For the list of hardware, schematics and buildguide, please look at the [hardware guide](insert_link_here)
