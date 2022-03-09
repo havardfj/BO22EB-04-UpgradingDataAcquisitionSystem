@@ -4,5 +4,3 @@ opencv-python
 PyQT5
 pyqtgraph
 pyserial
-socket
-
