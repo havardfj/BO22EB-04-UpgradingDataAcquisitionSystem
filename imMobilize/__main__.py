@@ -1,3 +1,4 @@
+# Redigert av Håvard Faxvaag Johnsen
 # -*- coding: utf-8 -*-
 """
 Created on Mon Feb  5 13:20:50 2018
@@ -48,10 +49,13 @@ class imMobilize(QtWidgets.QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
         self.hostname = socket.gethostname()
-        try:
-            os.chdir("D:\\")
-        except:
-            os.chdir(f"/home/{os.getlogin()}")
+
+        # Kommentert ut for å få programmet til å kjøre! 
+        # try: 
+        #     os.chdir("D:\\")
+        # except:
+        #     os.chdir(f"/home/{os.getlogin()}")
+
         self.working_directory_selected = False
         """
         ==============================================================
