@@ -5,7 +5,7 @@
 This is documntation for the Bachelor Thesis: BO22EB-O4 - Data Collection System for Behavior and Activity of Marine Organisms.
 It is written by Dennis L. Dimmen, Andreas K. Seljeset and Håvard F. Johnsen for Chatzigeorgiou Group at the Sars Center, UiB.
 
-**The original documentation is collected from [imMobilize](https://github.com/ChatzigeorgiouGroup/imMobilize) and is written by Daniel Dondorp. The new documentation is heavily based on the original, all creds to Daniel and Chatzigeorgiou Group. Only some minor fixes and general cleanup is done to the original.**
+The original documentation is collected from [imMobilize](https://github.com/ChatzigeorgiouGroup/imMobilize) and is written by Daniel Dondorp. The new documentation is heavily based on the original, _all_ creds to Daniel and Chatzigeorgiou Group. Only some minor fixes and general cleanup is done to the original.
 
 
 
