@@ -1,11 +1,10 @@
-# Redigert av Håvard Faxvaag Johnsen
+# Redigert av Håvard Faxvaag Johnsen, Dennis L. Dimmen og Andreas K. Seljeset
 # -*- coding: utf-8 -*-
 """
 Created on Mon Feb  5 13:20:50 2018
 
 @author: ddo003
 """
-
 from Interface.form import *
 from pyqtgraph.Qt import QtCore, QtGui, QtWidgets
 import pyqtgraph
@@ -14,8 +13,6 @@ pyqtgraph.setConfigOption("background", "w")
 pyqtgraph.setConfigOption("foreground", "k")
 
 from pyqtgraph import PlotDataItem, LinearRegionItem, mkPen
-
-
 # from functools import partial
 import numpy as np
 from threading import Thread
@@ -30,7 +27,6 @@ import cv2
 import socket
 
 ### trying to optimise according to Kushals instructions:
-
 try:
     cv2.setNumThreads(1)
 except:
@@ -38,7 +34,6 @@ except:
 
 
 # from PandasModel import PandasModel
-
 class imMobilize(QtWidgets.QWidget):
 
     def __init__(self, parent=None, *args):
@@ -50,7 +45,7 @@ class imMobilize(QtWidgets.QWidget):
         self.ui.setupUi(self)
         self.hostname = socket.gethostname()
 
-        # Kommentert ut for å få programmet til å kjøre! 
+        # Kommenteres ut om programmet sliter med å kjøre! -----------------------------------------
         # try: 
         #     os.chdir("D:\\")
         # except:
@@ -84,10 +79,6 @@ class imMobilize(QtWidgets.QWidget):
         self.logged_temperature = np.array([])
         self.temp_plot_xvals = np.array([])
 
-
-
-
-
         """
         =====================================================================
         Connecting the buttons and controls in the light stim controls group
@@ -104,22 +95,18 @@ class imMobilize(QtWidgets.QWidget):
 
         self.ui.toggleWhiteColor.valueChanged.connect(self.toggle_lightstim_type)
         self.toggle_lightstim_type()
-
         """
         ====================================================================
         Connecting buttons and controls in vibration stimuli group
         ====================================================================
         """
-
         self.ui.buttonSaveVibrationStim.clicked.connect(self.save_vibration_stim)
-        
         
         """
         =====================================================================
         Connecting the buttons and controls in the stimuli manager group
         =====================================================================
         """
-
         self.Stims = StimuliManager(arduino=self.arduino)
         self.set_experiment_view()
         self.set_lightstim_name_lineedit()
@@ -167,8 +154,6 @@ class imMobilize(QtWidgets.QWidget):
         Connecting buttons and controls to the camera manager group
         ======================================================================
         """
-
-
         self.detect_cameras()
         self.ui.buttonCameraConnectDisconnect.clicked.connect(self.camera_connect_disconnect)
         self.ui.buttonCameraPreview.clicked.connect(self.toggle_preview)
@@ -201,17 +186,15 @@ class imMobilize(QtWidgets.QWidget):
         self.ui.checkboxAutoNaming.toggled.connect(self.set_autonaming)
         self.ui.buttonRecordVideo.clicked.connect(self.record_video)
 
-
     def detect_cameras(self):
         self.ui.comboBoxConnectedCameras.clear()
-        for ii in range(3):
+        for ii in range(4):                                  # Changed from 3 to 4. 
             cap = cv2.VideoCapture(ii)
             if not cap.isOpened():
                 pass
             else:
                 cam = "Camera "+str(ii +1)
                 self.ui.comboBoxConnectedCameras.addItem(cam)
-
 
     def camera_connect_disconnect(self):
         if not hasattr(self, "cam") or  not self.cam.cap.isOpened():
@@ -454,7 +437,10 @@ class imMobilize(QtWidgets.QWidget):
         duration = self.ui.spinBoxVibrationDuration.value()
         freq = self.ui.spinBoxVibrationFrequency.value()
         start_message = "v"+str(freq).zfill(3)+str(int(duration*1000)).zfill(4)
-        stop_message = "vC"
+        stop_message = "stop"                                     
+                # stop_message = "vC" replaces with "stop". When running the start and stop mesage startet with the same letter. 
+                # This kept telling the arduino to start vibrationsstimuli again and again in an infinite loop, causing the motors to never stop.
+                # By changing the stop message the problem was solved.
         stim_id = self.ui.lineeditVibrationStimName.text()
         self.Stims.add_stimulus(start_time, start_time+duration, start_message, stop_message, stim_id)
         self.set_vibrationstim_name_lineedit()
@@ -653,15 +639,11 @@ class imMobilize(QtWidgets.QWidget):
 
     #            self.ui.buttonRecordVideo.setChecked(False)
     #
-
     """
     ==========================================================================================
     METHODS TO RUN AN ENTIRE EXPERIMENT
     ==========================================================================================
     """
-    
-        
-    
     def start_many(self):
         
         n_exp = self.ui.spinBoxLazyMode.value()

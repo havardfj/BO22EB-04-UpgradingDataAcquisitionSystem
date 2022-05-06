@@ -1,17 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Aug  2 12:05:02 2018
-
-@author: install
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Thu Mar  1 15:12:46 2018
 
 @author: ddo003
 """
-
 from multiprocessing import Process, Queue
 from threading import Thread
 import queue
@@ -20,16 +12,12 @@ import time, sys
 import numpy as np
 from PyQt5 import QtCore
 
-
-
-
 class Camera(QtCore.QObject):
     signal_recording_finished = QtCore.pyqtSignal()
     
     def __init__(self, camera: object = 0, framerate: object = 30, shape: object = (7680, 4320), gamma: object = 100, brightness: object = 0,
                  exposure: object = -5.0) -> object:
         """
-
         :param camera: Which connected camera to use.
         :param framerate:
         :param shape:
@@ -52,7 +40,6 @@ class Camera(QtCore.QObject):
         self.exposure  = exposure
         self.q = queue.Queue()
 
-    
     @property
     def framerate(self):
         return self._framerate
@@ -62,7 +49,6 @@ class Camera(QtCore.QObject):
         self._framerate = framerate
         self.cap.set(cv2.CAP_PROP_FPS, framerate)
         
-        
 #        if framerate > 50:
 #            self.do_gamma = False
 #            print("\n Can not do calculations for gamma at framerates over 50 fps. Calculate corrected gamma on video later\n")
@@ -70,7 +56,6 @@ class Camera(QtCore.QObject):
 #            self.do_gamma = True
         print('Framerate set to: ' + str(framerate))
      
-    
     @property
     def gamma(self):
         return self._gamma
@@ -155,9 +140,7 @@ class Camera(QtCore.QObject):
                 retfalse+=1
         self.q.put("done")
         sys.stdout.write("\n\n Acquisition Done. Missed "+str(retfalse)+" frames \n Finishing up writing video from Queue \n")
-        
-        
-                
+               
     def _write(self, name, duration):
         self.write_alive = True
         w=int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH ))
@@ -190,8 +173,6 @@ class Camera(QtCore.QObject):
                 self.alive = False
                 break
 #        cv2.destroyAllWindows()
-
-        
     
     def _timer(self, duration):
         start = time.time()
@@ -232,7 +213,6 @@ class Camera(QtCore.QObject):
 #                    frame = self.gamma_correction(frame, self.gamma)
                 cv2.imshow('preview',frame)
             
-            
             frames += 1
             if frames == 10:
                 end_time = time.time()
@@ -251,5 +231,3 @@ class Camera(QtCore.QObject):
         self.alive = False
         self.cam_alive = False
 #        self.write_alive = False
-        
-            

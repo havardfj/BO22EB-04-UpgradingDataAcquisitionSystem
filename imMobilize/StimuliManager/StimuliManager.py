@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 17 16:24:17 2018
-
-@author: install
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Fri Feb  2 10:28:07 2018
 @author: ddo003
 """
@@ -14,8 +7,6 @@ Created on Fri Feb  2 10:28:07 2018
 from threading import Thread
 import time, sys
 import pandas as pd
-
-
 
 class StimuliManager:
     def __init__(self, arduino = False):

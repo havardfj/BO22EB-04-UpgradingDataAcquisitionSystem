@@ -4,12 +4,10 @@ Created on Mon Feb  5 09:19:40 2018
 
 @author: ddo003
 """
-
 import serial
 import serial.tools.list_ports
 import time
 import sys
-
 
 class Arduino:
 
