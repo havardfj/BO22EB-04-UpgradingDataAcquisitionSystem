@@ -2,7 +2,10 @@
 # imMobilize - Bachelor Thesis BO22EB-O4 
 ### This is a clone/fork of the Sars Center´s [imMobilize](https://github.com/ChatzigeorgiouGroup/imMobilize)
 
-This is documntation for the Bachelor Thesis: BO22EB-O4 - Data Collection System for Behavior and Activity of Marine Organisms.
+This is documntation for the Bachelor Thesis: BO22EB-O4 - Upgrading data acquisition system for research on Ciona Intestinalis![image](https://user-images.githubusercontent.com/86054889/169571949-d84f1659-689c-4d77-b2da-defbe2276d47.png)
+
+
+Data Collection System for Behavior and Activity of Marine Organisms.
 It is written by Dennis L. Dimmen, Andreas K. Seljeset and Håvard F. Johnsen for Chatzigeorgiou Group at the Sars Center, UiB.
 
 The original documentation is collected from [imMobilize](https://github.com/ChatzigeorgiouGroup/imMobilize) and is written by Daniel Dondorp. The new documentation is heavily based on the original, _all_ creds to Daniel and Chatzigeorgiou Group. Only some minor fixes and general cleanup is done to the original.
