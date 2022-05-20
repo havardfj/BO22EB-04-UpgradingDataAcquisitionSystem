@@ -18,7 +18,7 @@ For the list of hardware, schematics and buildguide, please look at the __
 
 Due to camera compatibility, imMobilize is currently only available for Windows. imMobilize is written in python and requires python 3.5+ to be installed on the system. To install imMobilize, run 
 ```
-git clone https://github.com/DanielDondorp/imMobilize.git
+git clone https://github.com/havardfj/BO22EB-04-Datainnsamling/immboilize.git
 ```
 or download this repository and extract the .zip file.
 
