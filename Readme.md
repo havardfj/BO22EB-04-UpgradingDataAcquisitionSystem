@@ -10,7 +10,7 @@ The original documentation is collected from [imMobilize](https://github.com/Cha
 imMobilize consists of software and hardware designed to collect video data of small free swimming animals, and administer various stimuli in an accurate and automated manner. This system was developed for experiments with the tunicate _Ciona intestinalis_
 
 ### Hardware
-For the list of hardware, schematics and buildguide, please look at the [hardware guide](insert_link_here)
+For the list of hardware, schematics and buildguide, please look at the __
 
 ### Software
 
